@@ -1,0 +1,33 @@
+block variables
+- var menu = [{link: 'page1.html', name: 'link1'}, {link: 'page2.html', name: 'link3'}, {link: 'page3.html', name: 'link3'}]
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title= PageTitle
+    body
+    
+        header
+            ul
+                li 
+                    a(href='page1.html') Link1
+                li 
+                    a(href='page2.html')  Link3
+                li 
+                    a(href='page2.html')  Link3
+            mixin NavLink(link, name, active)
+                li 
+                    if(active)
+                        a(href=link, class='active')=name              
+                    else 
+                        a(href=link)=name   
+            ul(class='second')
+                +NavLink('page1.html', 'link1', true)   
+                +NavLink('page2.html', 'link2')
+                +NavLink('page2.html', 'link3')    
+            ul(class='third')
+                for i in menu
+                    li 
+                        a(href=i.link)=i.name
+        block content

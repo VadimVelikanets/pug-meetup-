@@ -1,0 +1,18 @@
+extends layout/header
+block variables
+    - var defaultTitle = 12
+    - var PageTitle = 'Main page'
+    - var className = 'about'
+    - var bool = true
+block content
+    #app.container
+        //if else
+        if defaultTitle
+            h1 Title 1
+        else 
+            h1 Title 2
+        if bool     
+            a(href="#")    
+        p(class=className). 
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis debitis officia, necessitatibus doloremque recusandae cumque modi officiis voluptatibus odio maiores tenetur, sapiente sint reiciendis porro, nesciunt dolor ad laborum esse.
+     
